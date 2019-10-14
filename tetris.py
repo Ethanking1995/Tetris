@@ -125,7 +125,6 @@ class Shape():
                 return False
         return True
         
-        #YOUR CODE HERE
         # default implementation (MUST CHANGE)
         
     
@@ -157,7 +156,6 @@ class Shape():
                 return False
         return True
 
-        #YOUR CODE HERE
         pass
 
     def rotate(self, board):
@@ -329,7 +327,6 @@ class Board():
             
         '''
             
-        #YOUR CODE HERE
         if 0<=x<self.width and 0<=y<self.height and (x,y) not in self.grid:
             return True
         else:
@@ -435,7 +432,7 @@ class Board():
         self.youjustlostthegame.setFill("blue")
         self.youjustlostthegame.draw(self.canvas)
 
-        #YOUR CODE HERE
+       
         pass        
 
 
@@ -475,11 +472,8 @@ class Tetris():
 
         # Draw the current_shape oan the board (take a look at the
         # draw_shape method in the Board class)
-        ####  YOUR CODE HERE ####
         self.board.draw_shape(self.current_shape)
 
-        # For Step 9:  animate the shape!
-        ####  YOUR CODE HERE ####
         self.win.after(self.delay,self.animate_shape)
 
 
