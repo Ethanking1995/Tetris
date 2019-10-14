@@ -38,7 +38,6 @@ class Block(Rectangle):
             checks if the block can move dx squares in the x direction
             and dy squares in the y direction
             Returns True if it can, and False otherwise
-            HINT: use the can_move method on the Board object
         '''
         x=self.x+dx
         y=self.y+dy
@@ -46,8 +45,6 @@ class Block(Rectangle):
             return True
         else:
             return False
-        #YOUR CODE HERE
-        
     
     def move(self, dx, dy):
         ''' Parameters: dx - type: int
@@ -89,7 +86,6 @@ class Shape():
     def get_blocks(self):
         '''returns the list of blocks
         '''
-        #YOUR CODE HERE
         return self.blocks
 
     def draw(self, win):
@@ -184,15 +180,9 @@ class Shape():
         if self.shift_rotation_dir:
             self.rotation_dir *= -1
         
-
-        ####  YOUR CODE HERE #####
         pass
 
-        ### This should be at the END of your rotate code. 
-        ### DO NOT touch it. Default behavior is that a piece will only shift
-        ### rotation direciton after a successful rotation. This ensures that 
-        ### pieces which switch rotations definitely remain within their 
-        ### accepted rotation positions.
+        
         
 
         
@@ -353,8 +343,7 @@ class Board():
             add each block to the grid using its
             (x, y) coordinates as a dictionary key
 
-            Hint: use the get_blocks method on Shape to
-            get the list of blocks
+          
             
         '''
         x=shape.get_blocks()
@@ -364,7 +353,7 @@ class Board():
 
 
         
-        #YOUR CODE HERE
+        
                 
 
 
@@ -383,7 +372,6 @@ class Board():
             self.grid[(x,y)].undraw()
             del(self.grid[(x,y)])
 
-        #YOUR CODE HERE
         pass
     
     def is_row_complete(self, y):        
@@ -400,8 +388,7 @@ class Board():
             if (x,y) not in self.grid:
                 return False
         return True
-        #YOUR CODE HERE
-        
+    
     
     def move_down_rows(self, y_start):
         ''' Parameters: y_start - type:int                        
@@ -423,8 +410,7 @@ class Board():
 
 
         
-        #YOUR CODE HERE
-        pass
+       
     
     def  remove_complete_rows(self):
         ''' removes all the complete rows
@@ -440,11 +426,10 @@ class Board():
                 self.delete_row(y)
                 self.move_down_rows(y-1)
         
-        #YOUR CODE HERE
+  
 
     def game_over(self):
         ''' display "Game Over !!!" message in the center of the board
-            HINT: use the Text class from the graphics library
         '''
         self.youjustlostthegame = Text(Point(self.width * Block.BLOCK_SIZE / 2, self.height * Block.BLOCK_SIZE / 8), "You just lost the game.")
         self.youjustlostthegame.setFill("blue")
@@ -509,7 +494,6 @@ class Tetris():
         SHAPES = [I_shape, J_shape, L_shape, O_shape, S_shape, T_shape, Z_shape]
         x=random.choice(SHAPES)
         return x(center)
-        #YOUR CODE HERE
         
     
     def animate_shape(self):
@@ -562,7 +546,6 @@ class Tetris():
             self.current_shape.rotate(self.board)
 
         
-        #YOUR CODE HERE
         pass
     
     def key_pressed(self, event):
@@ -581,7 +564,6 @@ class Tetris():
 
         '''
             
-        #YOUR CODE HERE
         key = event.keysym
         if key == 'space':
             while self.do_move('Down'):
